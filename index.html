@@ -1,0 +1,94 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #ff0060;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 130px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            background-color: #fff;
+            color: #ff69b4;
+            border: 2px solid #ff69b4;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff69b4;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Would you be my Valentine?</h1>
+        <h1> Ms Joanne Claire Lin </h1>
+        <div class="buttons-container">
+            <button class="btn" id="yesButton">Yes</button>
+            <button class="btn" id="noButton">No</button>
+        </div>
+    </div>
+
+    <script>
+        const yesButton = document.querySelector('#yesButton');
+        
+        yesButton.addEventListener('click', function() {
+            // Redirect to letter page when clicked
+            window.location.href = "letter.html";  // Ensure this points to the correct file
+        });
+
+        const noButton = document.querySelector('#noButton');  // Use the id selector here
+
+        noButton.addEventListener('click', function() {
+            // Move the "No" button to a new random position every time it's clicked
+            moveButtonRandomly();
+
+        });
+
+        function moveButtonRandomly() {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noButton.offsetHeight));
+
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${randomX}px`;
+            noButton.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Heart</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+        }
+        .game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        .heart {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            cursor: pointer;
+            transition: transform 0.2s, left 0.5s ease, top 0.5s ease;
+        }
+        .heart:active {
+            transform: scale(1.2);
+        }
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 1.5rem;
+            display: none;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff4081;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <img src="heartimage.jpg" id="heart" class="heart">
+        <div class="message" id="message">
+            You caught my heart! 💖<br>
+            <a href="videopage.html" class="next-button">Next</a>
+        </div>
+    </div>
+
+    <script>
+        const heart = document.getElementById("heart");
+        const message = document.getElementById("message");
+        let gameActive = true; // Game state
+
+        function moveHeart() {
+            if (!gameActive) return; // Stop moving if the game is over
+            const maxX = window.innerWidth - heart.clientWidth;
+            const maxY = window.innerHeight - heart.clientHeight;
+            const randomX = Math.random() * maxX;
+            const randomY = Math.random() * maxY;
+            heart.style.left = `${randomX}px`;
+            heart.style.top = `${randomY}px`;
+        }
+
+        const heartMover = setInterval(moveHeart, 1000);
+
+        heart.addEventListener("click", function() {
+            gameActive = false; // Stop the game
+            clearInterval(heartMover); // Stop moving the heart
+            message.style.display = "block"; // Show message and next button
+            heart.style.display = "none"; // Hide the heart
+        });
+
+        moveHeart();
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Letter</title>
+    <style>
+        body {
+            background-color: #ff0060; /* Baby pink color */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Full-screen video background */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1; /* Ensures video stays in the background */
+        }
+
+        .letter-container {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ff69b4;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 255); /* Slightly transparent background */
+            max-width: 80%;
+            min-width: 300px;
+        }
+
+        .letter-container h4 {
+            font-size: 2rem;
+            color: #ff69b4;
+            margin-right: 500px;
+            padding-right: 400px;
+        }
+
+        .letter {
+            font-size: 1rem;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .btn {
+            font-size: 0.5rem;
+            padding: 15px 30px;
+            background-color: #fff;
+            color: #ff69b4;
+            border: 2px solid #ff69b4;
+            border-radius: 25px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff69b4;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Flower animation video background -->
+    <video class="video-background" autoplay loop muted>
+        <source src="your-flower-animation-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="letter-container">
+        <h4>Dear Joanne,</h4>
+        <div class="letter">
+            <p>Happy Valentine's Day 💖 I am making sure, I am the first to ask. I can't have other guys trying to take you away.
+                Who is going to be my bad Valorant Duo. I am glad we crossed path. ALthough, you really found me under a rock and some how
+                hooked me. I don't know where this will go and what this will become. And I think quite frankly, no one really knows. But I can 
+                promise you. I care for you genuinely. And I will not put myself in a position to betray your trust. I may not be much. I promise
+                I am giving you everything I can. I think you are a beautiful person, I am not just talking about looks. You have so much goodness and love
+                inside of you. And you deserve so much love. The kind of love you don't ever have to doubt. The kind of love that loves you unconditionally. If you ever feel like you need someone to talk to even if one day we stopped talking, I will leave
+                a channel open for you. Whenever, you are going through something and you feel like crying, you feel like no one is there.
+                I am always going to root for you and cheer for you no matter what happens. I know my babymama can handle it. 
+                
+                I hope you love this, I have never coded as a gift so you are defintely the first. This is going to be on the internet... so as long as I 
+                don't delete this, it will be there when you need a little bit of love. 
+
+                We will be fine. And even if we don't I am sure we tried our best to work things out. 
+
+                Thank you for allowing me to care for you. 
+
+                We haven't made much memories yet but... I am sure we will make so much more. 
+
+                before I show you that you got to play a game to help you train your aim in valorant haha
+
+            </p>
+
+        </div>
+        <div class="buttons-container">
+            <button class="btn" id="nextButton">next</button>
+        </div>
+    </div>
+
+    <script>
+        const nextButton = document.querySelector('#nextButton');
+        
+        nextButton.addEventListener('click', function() {
+            // Redirect to letter page when clicked
+            window.location.href = "catchtheheart.html";  // Ensure this points to the correct file
+        });
+    </script>
+</body>
+</html>
